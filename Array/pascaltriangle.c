@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int binomialcoeff(int n,int k);
+void printPascal(int n)
+{
+	for(int line=0;line<n;line++)
+	{
+		for(int i=0;i<=line;i++)
+		{
+			printf("%d",binomialcoeff(line,i));
+		}
+		print("\n");
+	}
+}
+int binomial(int n,int k)
+{
+	int res=1;
+	if(k>n-k)
+	{
+		k=n-k;
+		
+	}
+	for(int i=0;i<k;++i)
+	{
+		res*=(n-i);
+		res/=(i+1);
+	}
+	return res;
+}
+
+int main()
+{
+	int n=7;
+	printPascal(n);
+	return 0;
+}
